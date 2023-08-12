@@ -3,7 +3,7 @@ import inspect
 import pyautogui
 import tkinter as tk
 
-# BAD from matplotlib import pyplot as plt
+# BAD: from matplotlib import pyplot as plt
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 import numpy as np
@@ -29,7 +29,7 @@ def scale_background(pct: float) -> tuple[int, int]:
 def get_screen_dpi() -> float:
     """
     Calculates the dots per inch of the primary device on Microsoft Windows 10 or newer.
-    :return: dots per inch (DPI)
+    :returns dots per inch (DPI)
     """
     root = tk.Tk()
     MM_TO_IN = 0.0393700787
@@ -220,6 +220,23 @@ def display_simple_plot():
     plt.show()
 
 
+def display_transposed_multi_line_plots():
+    fn = f"\n{inspect.getframeinfo(inspect.currentframe()).function}"
+    print(fn)
+
+    scale_plot()
+
+    # 5 rows, 4 columns in each row
+    points = np.arange(1, 21).reshape(5, 4)
+    print(f"points:\n{points}")
+    points_transposed = points.transpose()
+    print(f"points transposed:\n{points_transposed}")
+    plt.plot(points_transposed, "g-o")
+    plt.title(f"{fn}")
+    plt.grid()
+    plt.show()
+
+
 def tutorial_simple():
     fn = f"\n{inspect.getframeinfo(inspect.currentframe()).function}"
     print(fn)
@@ -245,4 +262,5 @@ if __name__ == "__main__":
     # display_multi_line_numpy_plots()
     # display_multiple_plots()
     # display_simple_numpy_plot()
-    display_simple_plot()
+    # display_simple_plot()
+    display_transposed_multi_line_plots()
