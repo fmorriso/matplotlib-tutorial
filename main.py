@@ -208,6 +208,18 @@ def display_simple_numpy_plot():
     plt.show()
 
 
+def display_simple_plot():
+    fn = f"\n{inspect.getframeinfo(inspect.currentframe()).function}"
+    print(fn)
+
+    scale_plot()
+
+    plt.plot([1, 2, 3, 4, 5])
+    plt.title(f"{fn}")
+    plt.grid()
+    plt.show()
+
+
 def tutorial_simple():
     fn = f"\n{inspect.getframeinfo(inspect.currentframe()).function}"
     print(fn)
@@ -232,4 +244,5 @@ if __name__ == "__main__":
     # display_labeled_plot()
     # display_multi_line_numpy_plots()
     # display_multiple_plots()
-    display_simple_numpy_plot()
+    # display_simple_numpy_plot()
+    display_simple_plot()
