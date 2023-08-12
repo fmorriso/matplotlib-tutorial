@@ -139,6 +139,19 @@ def display_colored_line_plot():
     plt.show()
 
 
+def display_multiple_plots():
+    fn = f"\n{inspect.getframeinfo(inspect.currentframe()).function}"
+    print(fn)
+
+    scale_plot()
+
+    plt.plot([1, 2, 3, 4, 5], "g-o")
+    plt.plot([1, 2, 4, 8, 16], "b-^")
+    plt.title(f"{fn}")
+    plt.grid()
+    plt.show()
+
+
 def tutorial_simple():
     fn = f"\n{inspect.getframeinfo(inspect.currentframe()).function}"
     print(fn)
@@ -158,4 +171,5 @@ if __name__ == "__main__":
     # tutorial_simple()
     # display_bar_chart()
     # display_bar_chart_from_dictionary()
-    display_colored_line_plot()
+    # display_colored_line_plot()
+    display_multiple_plots()
