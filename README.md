@@ -1,7 +1,7 @@
 # MatPlotLib Tutorial
 Plotting and Graphing with MatPlotLib
 
-Bonus: Plot display is scale to 85% of device screen size.
+Bonus: Plot display is scaled to 85% of device screen size.
 ## History
 * Date Created: August 2023 by Fred Morrison
 ## References
