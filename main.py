@@ -237,6 +237,18 @@ def display_transposed_multi_line_plots():
     plt.show()
 
 
+def display_w_plot():
+    fn = f"\n{inspect.getframeinfo(inspect.currentframe()).function}"
+    print(fn)
+    scale_plot()
+    xs = [1, 2, 3, 4, 5]
+    ys = [3, -1, 4, 0, 6]
+    plt.plot(xs, ys)
+    plt.title(f"{fn}")
+    plt.grid()
+    plt.show()
+
+
 def tutorial_simple():
     fn = f"\n{inspect.getframeinfo(inspect.currentframe()).function}"
     print(fn)
@@ -263,4 +275,5 @@ if __name__ == "__main__":
     # display_multiple_plots()
     # display_simple_numpy_plot()
     # display_simple_plot()
-    display_transposed_multi_line_plots()
+    # display_transposed_multi_line_plots()
+    display_w_plot()
