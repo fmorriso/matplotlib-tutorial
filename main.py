@@ -7,6 +7,7 @@ import tkinter as tk
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 import numpy as np
+from numpy import random
 
 
 def get_python_version() -> str:
@@ -139,6 +140,32 @@ def display_colored_line_plot():
     plt.show()
 
 
+def display_histogram():
+    fn = f"\n{inspect.getframeinfo(inspect.currentframe()).function}"
+    print(fn)
+
+    scale_plot()
+
+    plt.hist(random.randn(10000), 20)
+    plt.title(f"{fn}")
+    plt.grid()
+    plt.show()
+
+
+def display_labeled_plot():
+    fn = f"\n{inspect.getframeinfo(inspect.currentframe()).function}"
+    print(fn)
+
+    scale_plot()
+
+    xs = [1, 2, 3, 4, 5]
+    ys = [2, 4, 6, 8, 10]
+    plt.plot(xs, ys)
+    plt.title(f"{fn}")
+    plt.grid()
+    plt.show()
+
+
 def display_multiple_plots():
     fn = f"\n{inspect.getframeinfo(inspect.currentframe()).function}"
     print(fn)
@@ -172,4 +199,6 @@ if __name__ == "__main__":
     # display_bar_chart()
     # display_bar_chart_from_dictionary()
     # display_colored_line_plot()
-    display_multiple_plots()
+    # display_histogram()
+    display_labeled_plot()
+    # display_multiple_plots()
