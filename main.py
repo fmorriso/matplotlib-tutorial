@@ -248,6 +248,7 @@ def display_w_plot():
     plt.grid()
     plt.show()
 
+
 def tutorial_random_dot_plot():
     fn = f"\n{inspect.getframeinfo(inspect.currentframe()).function}"
     print(fn)
@@ -271,6 +272,7 @@ def tutorial_random_dot_plot():
     plt.title(fn)
     plt.grid()
     plt.show()
+
 
 def tutorial_simple():
     fn = f"\n{inspect.getframeinfo(inspect.currentframe()).function}"
@@ -301,3 +303,4 @@ if __name__ == "__main__":
     # display_transposed_multi_line_plots()
     # display_w_plot()
     # tutorial_random_dot_plot()
+    tutorial_simple()
