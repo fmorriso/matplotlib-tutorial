@@ -62,8 +62,8 @@ def scale_plot():
     dpi = get_screen_dpi()
     w = device_w / dpi
     h = device_h / dpi
-    n = plt.get_fignums()
 
+    # make sure we don't accidentally create a small, blank Figure that hides behind the larger one.
     if plt.fignum_exists(1):
         print('already have figure #1')
         fig = plt.figure(1)
@@ -74,6 +74,7 @@ def scale_plot():
     for i in plt.get_fignums():
         print(f'after: figure #{i}')
 
+    # scale the one and only Figure in this plot
     fig.set_dpi(dpi)
     fig.set_figwidth(w)
     fig.set_figheight(h)
@@ -96,5 +97,3 @@ if __name__ == "__main__":
     print(f"Python version: {get_python_version()}")
     print(f"NumPy version: {np.version.full_version}")
     tutorial_simple()
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
