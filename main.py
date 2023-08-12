@@ -248,6 +248,29 @@ def display_w_plot():
     plt.grid()
     plt.show()
 
+def tutorial_random_dot_plot():
+    fn = f"\n{inspect.getframeinfo(inspect.currentframe()).function}"
+    print(fn)
+
+    np.random.seed(19680801)  # seed the random number generator.
+    data = {
+        "a": np.arange(50),
+        "c": np.random.randint(0, 50, 50),
+        "d": np.random.randn(50),
+    }
+    data["b"] = data["a"] + 10 * np.random.randn(50)
+    data["d"] = np.abs(data["d"]) * 100
+
+    plt.style.use("fivethirtyeight")
+    fig, ax = plt.subplots(layout="constrained")
+    scale_plot()
+    ax.scatter("a", "b", c="c", s="d", data=data)
+    ax.set_xlabel("entry a")
+    ax.set_ylabel("entry b")
+
+    plt.title(fn)
+    plt.grid()
+    plt.show()
 
 def tutorial_simple():
     fn = f"\n{inspect.getframeinfo(inspect.currentframe()).function}"
@@ -265,7 +288,7 @@ def tutorial_simple():
 if __name__ == "__main__":
     print(f"Python version: {get_python_version()}")
     print(f"NumPy version: {np.version.full_version}")
-    # tutorial_simple()
+    # uncomment one of the following at a time to see its plot displayed:
     # display_bar_chart()
     # display_bar_chart_from_dictionary()
     # display_colored_line_plot()
@@ -276,4 +299,5 @@ if __name__ == "__main__":
     # display_simple_numpy_plot()
     # display_simple_plot()
     # display_transposed_multi_line_plots()
-    display_w_plot()
+    # display_w_plot()
+    # tutorial_random_dot_plot()
