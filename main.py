@@ -179,6 +179,21 @@ def display_multiple_plots():
     plt.show()
 
 
+def display_multi_line_numpy_plots():
+    fn = f"\n{inspect.getframeinfo(inspect.currentframe()).function}"
+    print(fn)
+
+    scale_plot()
+
+    # 5 rows, 4 columns in each row
+    points = np.arange(1, 21).reshape(5, 4)
+    print(f"points:\n{points}")
+    plt.plot(points, "g-o")
+    plt.title(f"{fn}")
+    plt.grid()
+    plt.show()
+
+
 def tutorial_simple():
     fn = f"\n{inspect.getframeinfo(inspect.currentframe()).function}"
     print(fn)
@@ -200,5 +215,6 @@ if __name__ == "__main__":
     # display_bar_chart_from_dictionary()
     # display_colored_line_plot()
     # display_histogram()
-    display_labeled_plot()
+    # display_labeled_plot()
     # display_multiple_plots()
+    display_multi_line_numpy_plots()
