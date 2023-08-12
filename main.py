@@ -65,19 +65,37 @@ def scale_plot():
 
     # make sure we don't accidentally create a small, blank Figure that hides behind the larger one.
     if plt.fignum_exists(1):
-        print('already have figure #1')
+        print("already have figure #1")
         fig = plt.figure(1)
     else:
-        print('creating new figure')
+        print("creating new figure")
         fig = plt.figure()
 
     for i in plt.get_fignums():
-        print(f'after: figure #{i}')
+        print(f"after: figure #{i}")
 
     # scale the one and only Figure in this plot
     fig.set_dpi(dpi)
     fig.set_figwidth(w)
     fig.set_figheight(h)
+
+
+def display_bar_chart():
+    fn = f"\n{inspect.getframeinfo(inspect.currentframe()).function}"
+    print(fn)
+
+    scale_plot()
+
+    centers = np.arange(1, 6)
+    tops = np.arange(2, 12, 2)
+    y_ticks = np.arange(0, 12, 1)
+    plt.xlabel("centers")
+    plt.ylabel("tops")
+    plt.yticks(y_ticks)
+    plt.bar(centers, tops)
+    plt.title(f"{fn}")
+    plt.grid()
+    plt.show()
 
 
 def tutorial_simple():
@@ -96,4 +114,5 @@ def tutorial_simple():
 if __name__ == "__main__":
     print(f"Python version: {get_python_version()}")
     print(f"NumPy version: {np.version.full_version}")
-    tutorial_simple()
+    # tutorial_simple()
+    display_bar_chart()
