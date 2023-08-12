@@ -98,6 +98,47 @@ def display_bar_chart():
     plt.show()
 
 
+def display_bar_chart_from_dictionary():
+    fn = f"\n{inspect.getframeinfo(inspect.currentframe()).function}"
+    print(fn)
+
+    scale_plot()
+
+    fruits = {"apples": 10, "oranges": 16, "bananas": 9, "pears": 4}
+    print(f"keys: {fruits.keys()}")
+    print(f"values: {fruits.values()}")
+    plt.xlabel("fruit")
+    plt.ylabel("count")
+    plt.bar(fruits.keys(), fruits.values())
+    """
+    this part is not working:
+
+    vals = np.array(fruits.values())
+    print(type(vals))
+    print(vals)    
+    max_y = vals.max(axis=0)
+    print(max_y)
+    # y_ticks = np.arange(0, len(fruits.keys()), 1)
+    # plt.yticks(y_ticks)
+    """
+    plt.title(f"{fn}")
+    plt.grid()
+    plt.show()
+
+
+def display_colored_line_plot():
+    fn = f"\n{inspect.getframeinfo(inspect.currentframe()).function}"
+    print(fn)
+
+    scale_plot()
+
+    # g = green, "-" = line, o = circles at each point on the line
+    plt.plot([2, 4, 6, 8, 10], "g-o")
+    plt.title(f"{fn}")
+    plt.grid()
+    plt.show()
+
+
 def tutorial_simple():
     fn = f"\n{inspect.getframeinfo(inspect.currentframe()).function}"
     print(fn)
@@ -115,4 +156,6 @@ if __name__ == "__main__":
     print(f"Python version: {get_python_version()}")
     print(f"NumPy version: {np.version.full_version}")
     # tutorial_simple()
-    display_bar_chart()
+    # display_bar_chart()
+    # display_bar_chart_from_dictionary()
+    display_colored_line_plot()
