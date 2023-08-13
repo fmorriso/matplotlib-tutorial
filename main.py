@@ -230,6 +230,7 @@ def display_squares():
     plt.style.use("seaborn-v0_8")
     fig, ax = plt.subplots()
     scale_plot()
+    # avoid PyPlot's default assumption that x values start at zero by explicitly specifying the x and y values.
     ax.plot(input_values, squares, linewidth=3)
 
     # Set chart title and label axes.
