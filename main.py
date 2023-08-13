@@ -241,7 +241,6 @@ def display_squares():
     # Set size of tick labels.
     ax.tick_params(labelsize=14)
     plt.grid()
-
     plt.show()
 
 
