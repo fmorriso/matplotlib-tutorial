@@ -205,6 +205,7 @@ def display_random_walk():
         # Plot the points in the walk.
         plt.style.use("classic")
         fig, ax = plt.subplots()
+        scale_plot()
         point_numbers = range(rw.num_points)
         ax.scatter(
             rw.x_values,
@@ -223,7 +224,9 @@ def display_random_walk():
         # Remove the axes.
         ax.get_xaxis().set_visible(False)
         ax.get_yaxis().set_visible(False)
-    
+
+        plt.grid()
+        plt.title(f'{fn}')
         plt.show()
     
         keep_running = input("Make another walk? (y/n): ")
