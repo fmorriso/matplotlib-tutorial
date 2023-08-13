@@ -194,6 +194,11 @@ def display_multiple_plots():
     plt.show()
 
 
+def display_random_walk():
+    fn = f"\n{inspect.getframeinfo(inspect.currentframe()).function}"
+    print(fn)
+
+
 def display_simple_numpy_plot():
     fn = f"\n{inspect.getframeinfo(inspect.currentframe()).function}"
     print(fn)
@@ -245,7 +250,7 @@ def display_squares():
 
 
 def display_squares_scatter():
-    """Python Crash Course, Chapter 15, Plot Scattered Squares """
+    """Python Crash Course, Chapter 15, Plot Scattered Squares"""
     fn = f"\n{inspect.getframeinfo(inspect.currentframe()).function}"
     print(fn)
 
@@ -350,10 +355,11 @@ if __name__ == "__main__":
     # display_labeled_plot()
     # display_multi_line_numpy_plots()
     # display_multiple_plots()
+    display_random_walk()
     # display_simple_numpy_plot()
     # display_simple_plot()
     # display_squares()
-    display_squares_scatter()
+    # display_squares_scatter()
     # display_transposed_multi_line_plots()
     # display_w_plot()
     # tutorial_random_dot_plot()
