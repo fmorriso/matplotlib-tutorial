@@ -7,6 +7,7 @@ Bonus: Plot display is scaled to 85% of device screen size.
 ## References
 * Chapter 17 Use Matplotlib for Plotting Graphics of the book ___Python Basics___
 * [matplotlib Tutorial](https://matplotlib.org/stable/tutorials/index.html)
+* Chapter 15 of the book ___Python Crash Course (3rd edition)___
 ## Software Used
 * Python 3.11.4
 * Matplotlib 3.7.2
