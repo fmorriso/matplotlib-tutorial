@@ -220,6 +220,30 @@ def display_simple_plot():
     plt.show()
 
 
+def display_squares():
+    """ Python Crash Course, Chapter 15, Plot Squares"""
+    fn = f"\n{inspect.getframeinfo(inspect.currentframe()).function}"
+    print(fn)
+    input_values = [1, 2, 3, 4, 5]
+    squares = [1, 4, 9, 16, 25]
+
+    plt.style.use("seaborn-v0_8")
+    fig, ax = plt.subplots()
+    scale_plot()
+    ax.plot(input_values, squares, linewidth=3)
+
+    # Set chart title and label axes.
+    ax.set_title("Square Numbers", fontsize=24)
+    ax.set_xlabel("Value", fontsize=14)
+    ax.set_ylabel("Square of Value", fontsize=14)
+
+    # Set size of tick labels.
+    ax.tick_params(labelsize=14)
+    plt.grid()
+    plt.title(f"{fn}")
+    plt.show()
+
+
 def display_transposed_multi_line_plots():
     fn = f"\n{inspect.getframeinfo(inspect.currentframe()).function}"
     print(fn)
@@ -286,7 +310,6 @@ def tutorial_simple():
     plt.show()
 
 
-# Press the green button in the gutter to run the script.
 if __name__ == "__main__":
     print(f"Python version: {get_python_version()}")
     print(f"NumPy version: {np.version.full_version}")
@@ -300,7 +323,8 @@ if __name__ == "__main__":
     # display_multiple_plots()
     # display_simple_numpy_plot()
     # display_simple_plot()
+    display_squares()
     # display_transposed_multi_line_plots()
     # display_w_plot()
     # tutorial_random_dot_plot()
-    tutorial_simple()
+    # tutorial_simple()
