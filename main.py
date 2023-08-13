@@ -227,21 +227,21 @@ def display_squares():
     input_values = [1, 2, 3, 4, 5]
     squares = [1, 4, 9, 16, 25]
 
-    plt.style.use("seaborn-v0_8")
+    # plt.style.use("seaborn-v0_8")
     fig, ax = plt.subplots()
     scale_plot()
     # avoid PyPlot's default assumption that x values start at zero by explicitly specifying the x and y values.
     ax.plot(input_values, squares, linewidth=3)
 
     # Set chart title and label axes.
-    ax.set_title("Square Numbers", fontsize=24)
+    ax.set_title(f"{fn} - Square Numbers", fontsize=24)
     ax.set_xlabel("Value", fontsize=14)
     ax.set_ylabel("Square of Value", fontsize=14)
 
     # Set size of tick labels.
     ax.tick_params(labelsize=14)
     plt.grid()
-    plt.title(f"{fn}")
+
     plt.show()
 
 
