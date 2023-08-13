@@ -1,13 +1,19 @@
-import sys, ctypes
+import ctypes
 import inspect
-import pyautogui
+import sys
 import tkinter as tk
+
 #
 import matplotlib.pyplot as plt
 import numpy as np
+import pyautogui
+#
+import pyautogui as pag
 from numpy import random
+
 #
 from random_walk import RandomWalk
+
 
 def get_python_version() -> str:
     return f"{sys.version_info.major}.{sys.version_info.minor}.{sys.version_info.micro}"
@@ -229,8 +235,9 @@ def display_random_walk():
         plt.title(f'{fn}')
         plt.show()
     
-        keep_running = input("Make another walk? (y/n): ")
-        if keep_running == "n":
+        #keep_running = input("Make another walk? (y/n): ")
+        keep_running = pag.confirm('Make another walk?','Keep Running?', buttons=['Yes','No'])
+        if keep_running.lower()[:1] == "n":
             break
 
 
