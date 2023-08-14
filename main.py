@@ -370,8 +370,9 @@ def roll_die():
 
     # print(frequencies)
     # visualize
-    title = "Results of Rolling One D6 1,000 Times"
+    title = f"{fn} - Results of Rolling One D6 1,000 Times"
     labels = {'x': 'Result', 'y': 'Frequency of Result'}
+    # Reference: https://plotly.com/python-api-reference/generated/plotly.express.bar.html
     fig = px.bar(x=poss_results, y=frequencies, title=title, labels=labels)
     # fig.print_grid()
     fig.show()

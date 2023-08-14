@@ -9,6 +9,7 @@ Bonus: Plot display is scaled to 85% of device screen size.
 * [matplotlib Tutorial](https://matplotlib.org/stable/tutorials/index.html)
 * Chapter 15 of the book ___Python Crash Course (3rd edition)___
 * [Python Crash Course - GitHub examples](https://github.com/ehmatthes/pcc_3e)
+* [Plotly Express Chart Type](https://plotly.com/python/plotly-express/)
 ## Software Used
 * Python 3.11.4
 * Matplotlib 3.7.2
