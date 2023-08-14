@@ -7,12 +7,13 @@ import tkinter as tk
 import matplotlib.pyplot as plt
 import numpy as np
 import pyautogui
+
 #
 import pyautogui as pag
 from numpy import random
-
 #
 from random_walk import RandomWalk
+from die import Die
 
 
 def get_python_version() -> str:
@@ -207,7 +208,7 @@ def display_random_walk():
         # Make a random walk.
         rw = RandomWalk(50_000)
         rw.fill_walk()
-    
+
         # Plot the points in the walk.
         plt.style.use("classic")
         fig, ax = plt.subplots()
@@ -222,21 +223,23 @@ def display_random_walk():
             s=1,
         )
         ax.set_aspect("equal")
-    
+
         # Emphasize the first and last points.
         ax.scatter(0, 0, c="green", edgecolors="none", s=100)
         ax.scatter(rw.x_values[-1], rw.y_values[-1], c="red", edgecolors="none", s=100)
-    
+
         # Remove the axes.
         ax.get_xaxis().set_visible(False)
         ax.get_yaxis().set_visible(False)
 
         plt.grid()
-        plt.title(f'{fn}')
+        plt.title(f"{fn}")
         plt.show()
-    
-        #keep_running = input("Make another walk? (y/n): ")
-        keep_running = pag.confirm('Make another walk?','Keep Running?', buttons=['Yes','No'])
+
+        # keep_running = input("Make another walk? (y/n): ")
+        keep_running = pag.confirm(
+            "Make another walk?", "Keep Running?", buttons=["Yes", "No"]
+        )
         if keep_running.lower()[:1] == "n":
             break
 
@@ -349,6 +352,17 @@ def display_w_plot():
     plt.show()
 
 
+def roll_die():
+    fn = f"\n{inspect.getframeinfo(inspect.currentframe()).function}"
+    print(fn)
+    die = Die()
+    results = []
+    for roll_num in range(100):
+        result = die.roll()
+        results.append(result)
+    # print(results)
+
+
 def tutorial_random_dot_plot():
     fn = f"\n{inspect.getframeinfo(inspect.currentframe()).function}"
     print(fn)
@@ -389,7 +403,7 @@ def tutorial_simple():
 if __name__ == "__main__":
     print(f"Python version: {get_python_version()}")
     print(f"NumPy version: {np.version.full_version}")
-    print(f'PyAutoGUI version: {pyautogui.getInfo()[2]}')
+    print(f"PyAutoGUI version: {pyautogui.getInfo()[2]}")
 
     # uncomment one of the following at a time to see its plot displayed:
     # display_bar_chart()
@@ -406,5 +420,6 @@ if __name__ == "__main__":
     # display_squares_scatter()
     # display_transposed_multi_line_plots()
     # display_w_plot()
+    roll_die()
     # tutorial_random_dot_plot()
     # tutorial_simple()
