@@ -2,7 +2,6 @@ import ctypes
 import inspect
 import sys
 import tkinter as tk
-
 #
 import matplotlib.pyplot as plt
 import numpy as np
@@ -11,6 +10,7 @@ import pyautogui
 #
 import pyautogui as pag
 from numpy import random
+import plotly.express as px
 #
 from random_walk import RandomWalk
 from die import Die
@@ -368,7 +368,13 @@ def roll_die():
         frequency = results.count(value)
         frequencies.append(frequency)
 
-    print(frequencies)
+    # print(frequencies)
+    # visualize
+    title = "Results of Rolling One D6 1,000 Times"
+    labels = {'x': 'Result', 'y': 'Frequency of Result'}
+    fig = px.bar(x=poss_results, y=frequencies, title=title, labels=labels)
+    # fig.print_grid()
+    fig.show()
 
 
 def tutorial_random_dot_plot():
