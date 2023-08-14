@@ -389,6 +389,8 @@ def tutorial_simple():
 if __name__ == "__main__":
     print(f"Python version: {get_python_version()}")
     print(f"NumPy version: {np.version.full_version}")
+    print(f'PyAutoGUI version: {pyautogui.getInfo()[2]}')
+
     # uncomment one of the following at a time to see its plot displayed:
     # display_bar_chart()
     # display_bar_chart_from_dictionary()
@@ -397,7 +399,7 @@ if __name__ == "__main__":
     # display_labeled_plot()
     # display_multi_line_numpy_plots()
     # display_multiple_plots()
-    display_random_walk()
+    # display_random_walk()
     # display_simple_numpy_plot()
     # display_simple_plot()
     # display_squares()
