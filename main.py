@@ -355,12 +355,20 @@ def display_w_plot():
 def roll_die():
     fn = f"\n{inspect.getframeinfo(inspect.currentframe()).function}"
     print(fn)
+
     die = Die()
     results = []
-    for roll_num in range(100):
+    for roll_num in range(1_000):
         result = die.roll()
         results.append(result)
     # print(results)
+    frequencies = []
+    poss_results = range(1, die.num_sides+1) # instead of 0-to-5, we want 1-to-6
+    for value in poss_results:
+        frequency = results.count(value)
+        frequencies.append(frequency)
+
+    print(frequencies)
 
 
 def tutorial_random_dot_plot():
