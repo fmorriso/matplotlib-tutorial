@@ -386,7 +386,8 @@ def roll_two_dice():
 
     # Make some rolls, and store results in a list.
     results = []
-    for roll_num in range(50_000):
+    max_range = 50_000
+    for roll_num in range(max_range):
         result = die_1.roll() + die_2.roll()
         results.append(result)
 
@@ -399,7 +400,7 @@ def roll_two_dice():
         frequencies.append(frequency)
 
     # Visualize the results.
-    title = f"{fn} - Results of Rolling a D6 and a D10 50,000 Times"
+    title = f"{fn} - Results of Rolling Two Six-sided Dice {max_range:,} Times"
     labels = {"x": "Result", "y": "Frequency of Result"}
     fig = px.bar(x=poss_results, y=frequencies, title=title, labels=labels)
 
