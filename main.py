@@ -506,6 +506,6 @@ if __name__ == "__main__":
     # display_w_plot()
     # roll_die()
     # roll_two_dice()
-    roll_two_unequal_sided_dice()
+    # roll_two_unequal_sided_dice()
     # tutorial_random_dot_plot()
-    # tutorial_simple()
+    tutorial_simple()
