@@ -328,7 +328,7 @@ def display_squares_scatter():
 def display_transposed_multi_line_plots():
     fn = f"\n{inspect.getframeinfo(inspect.currentframe()).function}"
     print(fn)
-
+    # take advantage of device screen size
     scale_plot()
 
     min_value, max_value = 1, 20
