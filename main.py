@@ -330,7 +330,7 @@ def display_transposed_multi_line_plots():
     print(fn)
     # take advantage of device screen size
     scale_plot()
-
+    #
     min_value, max_value = 1, 20
     rows = 5
     cols = int(max_value / rows)
