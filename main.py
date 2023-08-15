@@ -331,8 +331,11 @@ def display_transposed_multi_line_plots():
 
     scale_plot()
 
+    min_value, max_value = 1, 20
+    rows = 5
+    cols = int(max_value / rows)
     # 5 rows, 4 columns in each row
-    points = np.arange(1, 21).reshape(5, 4)
+    points = np.arange(min_value, max_value + 1).reshape(rows, cols)
     print(f"points:\n{points}")
     points_transposed = points.transpose()
     print(f"points transposed:\n{points_transposed}")
@@ -502,10 +505,10 @@ if __name__ == "__main__":
     # display_simple_plot()
     # display_squares()
     # display_squares_scatter()
-    # display_transposed_multi_line_plots()
+    display_transposed_multi_line_plots()
     # display_w_plot()
     # roll_die()
     # roll_two_dice()
     # roll_two_unequal_sided_dice()
     # tutorial_random_dot_plot()
-    tutorial_simple()
+    # tutorial_simple()
