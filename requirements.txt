@@ -1,0 +1,7 @@
+ctypes
+inspect
+matplotlib
+numpy
+plotly
+pyautogui
+tkinter
